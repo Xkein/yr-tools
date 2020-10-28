@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>788</width>
+    <height>601</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Hook Manager</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QColumnView" name="clvHooks">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>120</y>
+      <width>721</width>
+      <height>231</height>
+     </rect>
+    </property>
+    <property name="horizontalScrollBarPolicy">
+     <enum>Qt::ScrollBarAsNeeded</enum>
+    </property>
+    <property name="editTriggers">
+     <set>QAbstractItemView::NoEditTriggers</set>
+    </property>
+    <property name="selectionMode">
+     <enum>QAbstractItemView::SingleSelection</enum>
+    </property>
+   </widget>
+   <widget class="QTableView" name="tbvAllHooks">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>370</y>
+      <width>721</width>
+      <height>192</height>
+     </rect>
+    </property>
+    <property name="contextMenuPolicy">
+     <enum>Qt::ActionsContextMenu</enum>
+    </property>
+    <property name="editTriggers">
+     <set>QAbstractItemView::NoEditTriggers</set>
+    </property>
+   </widget>
+   <widget class="QSplitter" name="splitter">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>50</y>
+      <width>511</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+    <widget class="QTextEdit" name="txtInj"/>
+    <widget class="QPushButton" name="btnGetInj">
+     <property name="text">
+      <string>Get Inj</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QSplitter" name="splitter_2">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>10</y>
+      <width>511</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+    <widget class="QTextEdit" name="txtSource"/>
+    <widget class="QPushButton" name="btnGetSource">
+     <property name="text">
+      <string>Get Source</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QSplitter" name="splitter_3">
+    <property name="geometry">
+     <rect>
+      <x>560</x>
+      <y>10</y>
+      <width>111</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+    <widget class="QPushButton" name="pushButton">
+     <property name="text">
+      <string>Analyse</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_2">
+     <property name="text">
+      <string>Generate Inj</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>90</y>
+      <width>252</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QCheckBox" name="chkShowSame">
+       <property name="text">
+        <string>Show Same Hook</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="chkShowAnnotated">
+       <property name="text">
+        <string>Show Annotated Hook</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionSelect_Direction">
+   <property name="text">
+    <string>Select Direction</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>btnGetSource</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>btnGetSource()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>531</x>
+     <y>40</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>643</x>
+     <y>43</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnGetInj</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>btnGetInj()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>532</x>
+     <y>72</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>648</x>
+     <y>85</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkShowSame</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>chkShowSame(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>66</x>
+     <y>105</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>761</x>
+     <y>115</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>btnAnalyse()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>670</x>
+     <y>32</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>784</x>
+     <y>41</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>clvHooks</sender>
+   <signal>clicked(QModelIndex)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>clvHooksClicked(QModelIndex)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>464</x>
+     <y>215</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>783</x>
+     <y>228</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>btnGenerateInj()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>640</x>
+     <y>66</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>745</x>
+     <y>61</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>tbvAllHooks</sender>
+   <signal>clicked(QModelIndex)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>tbvAllHooksClicked(QModelIndex)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>659</x>
+     <y>442</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>761</x>
+     <y>465</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkShowAnnotated</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>chkShowAnnotated(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>247</x>
+     <y>105</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>374</x>
+     <y>93</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>btnGetSource()</slot>
+  <slot>btnGetInj()</slot>
+  <slot>chkShowSame(int)</slot>
+  <slot>btnAnalyse()</slot>
+  <slot>lstFileClicked(QModelIndex)</slot>
+  <slot>clvHooksClicked(QModelIndex)</slot>
+  <slot>btnGenerateInj()</slot>
+  <slot>tbvAllHooksClicked(QModelIndex)</slot>
+  <slot>chkShowAnnotated(int)</slot>
+ </slots>
+</ui>
